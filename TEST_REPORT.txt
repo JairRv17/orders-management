@@ -1,0 +1,58 @@
+PHPUnit 12.5.8 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.3.30
+Configuration: /var/www/symfony/phpunit.dist.xml
+
+..................................                                34 / 34 (100%)
+
+Time: 00:00.027, Memory: 16.00 MB
+
+Checkout Order Service (App\Tests\Unit\Application\Order\CheckoutOrderService)
+ ✔ Checkout successfully
+ ✔ Throws when customer id empty
+ ✔ Throws when order not found
+ ✔ Throws when order does not belong to customer
+ ✔ Throws when order already paid
+
+Create Order Service (App\Tests\Unit\Application\Order\CreateOrderService)
+ ✔ Create order successfully
+ ✔ Throws when product not found
+ ✔ Decreases product stock
+
+Create Product Service (App\Tests\Unit\Application\Product\CreateProductService)
+ ✔ Create product successfully
+ ✔ Repository save is called
+
+Get Order Service (App\Tests\Unit\Application\Order\GetOrderService)
+ ✔ Get order successfully
+ ✔ Throws when customer id empty
+ ✔ Throws when order not found
+ ✔ Throws when order does not belong to customer
+
+Order (App\Tests\Unit\Entity\Order)
+ ✔ Can create order
+ ✔ Customer id cannot be empty
+ ✔ Add item
+ ✔ Total is calculated correctly
+ ✔ Cannot add item to paid order
+ ✔ Pay changes status to paid
+ ✔ Cannot pay empty order
+ ✔ Cannot pay already paid order
+
+Order Item (App\Tests\Unit\Entity\OrderItem)
+ ✔ Can create order item
+ ✔ Quantity must be greater than zero
+ ✔ Unit price must be greater than zero
+ ✔ Subtotal is calculated correctly
+
+Product (App\Tests\Unit\Entity\Product)
+ ✔ Can create product
+ ✔ Name cannot be empty
+ ✔ Price must be valid decimal
+ ✔ Price must be greater than zero
+ ✔ Stock cannot be negative
+ ✔ Decrease stock
+ ✔ Decrease stock throws when quantity not positive
+ ✔ Decrease stock throws when insufficient stock
+
+OK (34 tests, 73 assertions)
