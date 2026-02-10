@@ -5,4 +5,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "react-router", "react-dom/client"],
+  },
 });
