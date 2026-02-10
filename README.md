@@ -1,6 +1,6 @@
-# Hiberus Technical Test
+# Orders Management
 
-API REST for product and order management.
+Full-stack order management system built with Symfony 7.4 (PHP 8.3) and React 19, featuring product catalog, order processing, and simulated payments. Dockerized with MySQL.
 
 ## Requirements
 
@@ -10,10 +10,14 @@ API REST for product and order management.
 ## Installation
 
 ```bash
-# Start containers
+# Build and start containers
+docker-compose build
 docker-compose up -d
 
-# Install dependencies
+# Setup frontend environment
+cp frontend/.env.example frontend/.env
+
+# Install backend dependencies
 docker exec symfony_php composer install
 
 # Run migrations
@@ -73,8 +77,22 @@ backend/
 │   ├── Controller/Api/     # REST Controllers
 │   ├── Entity/             # Doctrine Entities
 │   ├── Repository/         # Repositories
-│   └── Application/        # Application Services
-└── tests/Unit/             # Unit Tests
+│   ├── Enum/               # Enums (OrderStatus)
+│   └── Application/        # Application Services (Commands, DTOs)
+├── tests/Unit/             # Unit Tests
+└── migrations/             # Doctrine Migrations
+
+frontend/
+├── app/
+│   ├── components/         # React Components
+│   ├── routes/             # Route Pages
+│   └── utils/              # Helpers & Constants
+└── .env.example            # Environment Variables Template
+
+docker/
+├── php/Dockerfile          # PHP-FPM Image
+├── nginx/default.conf      # Nginx Config
+└── node/Dockerfile         # Node Image
 ```
 
 ## Technologies
