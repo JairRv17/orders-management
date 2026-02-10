@@ -256,7 +256,7 @@ export default function Dashboard() {
                 <input
                   id="productName"
                   type="text"
-                  placeholder="E.g: HP Laptop"
+                  placeholder="Macbook Pro"
                   value={productName}
                   onChange={(e) => setProductName(e.target.value)}
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-gray-900 placeholder-gray-400"
