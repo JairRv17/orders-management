@@ -9,8 +9,19 @@ export default defineConfig({
     watch: {
       usePolling: true,
     },
+    warmup: {
+      clientFiles: ["./app/**/*.tsx", "./app/**/*.ts"],
+    },
   },
   optimizeDeps: {
-    include: ["react", "react-dom", "react-router", "react-dom/client"],
+    include: [
+      "react",
+      "react/jsx-runtime",
+      "react/jsx-dev-runtime",
+      "react-dom",
+      "react-dom/client",
+      "react-router",
+    ],
+    holdUntilCrawlEnd: false,
   },
 });
